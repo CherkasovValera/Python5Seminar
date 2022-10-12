@@ -1,20 +1,29 @@
 # Создайте программу для игры в ""Крестики-нолики"".
+import random, time
+empty_field=[['_','_','_'],['_','_','_'],['_','_','_']]
+print(empty_field[0][1])
+print(*empty_field, sep="\n")
+turn=round(time.time())%2==0
+win=False
+def fine_winer(a):#ходит ноликами
+    play="O"
+    if a: play="X"
+    for i in range(3):
+        if empty_field[i][0]==play and empty_field[i][1]==play and empty_field[i][2]==play:return True
+        if empty_field[0][i]==play and empty_field[1][i]==play and empty_field[2][i]==play:return True
+        if empty_field[0][0]==play and empty_field[1][1]==play and empty_field[2][2]==play:return True
+        if empty_field[0][2]==play and empty_field[1][1]==play and empty_field[2][0]==play:return True
+        else: print ('Ничья')
+        return False
+while not win:
+    user_input=list(map(int,input("Введите координаты  ").split()))
+    if turn and empty_field[user_input[0]-1][user_input[1]-1]=='_':
+        empty_field[user_input[0]-1][user_input[1]-1]='X'
+    elif not turn and empty_field[user_input[0]-1][user_input[1]-1]=='_':
+        empty_field[user_input[0]-1][user_input[1]-1]='O'
+    else: turn= not turn
+    win= fine_winer(turn)
+    turn=not turn
+    print(*empty_field, sep="\n")
+print(win)
 
-def gamer1():#ходит ноликами
-    str1 = '_|_|_'
-    str2 = '_|_|_'
-    str3 = ' | | '
-    print(str1, str2, str3, sep='\n')
-    a= int(input('Ходит игрок №1, введите номер строки от 1 до 3: '))
-    i = int(input('Введите номер столбца от 1 до 3: '))
-    if a == 1:
-        for b in range(0,b):
-            str1=list.replace(i*2,"0")
-            if a == 2:
-                for b in range(0,b):
-                    str2=list.replace(i*2,"0")
-                    if a == 3:
-                        for b in range(0,b):
-                            str3=list.replace(i*2,"0")
-    print(str1, str2, str3, sep='\n')
-print (gamer1())

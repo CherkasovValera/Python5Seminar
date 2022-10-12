@@ -12,20 +12,20 @@ b = abs(int(input('Определение хода первого игрока. 
 a = [random.randint(1,2) for _ in range(b-1)]
 print('Первым ходит игрок №' , (a))
 # n=a
-summa=221
+summa=2021
 # def player1():
 print ('1 Ход, ходит игрок №',(a))
+count=1
 while summa>0: 
-    count=1
+    if a==2:
+        k=1
+    else:
+        k=2
     play= int(input('Игрок забирает конфеты в количестве  '))
     if play<29 or summa<28:
         summa-=play
         count+=1
         # break
     print((count),'Ход, осталось конфет', (summa))
-    if a==2:
-        k=1
-    else:
-        k=2
-    print ('Ходит игрок №',(k))
+    print ('Ходит игрок №',(int(k)))
 print('Победил игрок № ')
