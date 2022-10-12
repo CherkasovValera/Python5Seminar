@@ -10,19 +10,22 @@
 import random, math 
 b = abs(int(input('Определение хода первого игрока. Сколько игроков играет?')))
 a = [random.randint(1,2) for _ in range(b-1)]
-print(a)
-n=a
-summa=2021
+print('Первым ходит игрок №' , (a))
+# n=a
+summa=221
 # def player1():
-while summa>28: 
-    count=0
-    p1= int(input('Игрок забирает конфеты в количестве  '))
-    if p1<29 and summa<29:
-        summa-=p1
+print ('1 Ход, ходит игрок №',(a))
+while summa>0: 
+    count=1
+    play= int(input('Игрок забирает конфеты в количестве  '))
+    if play<29 or summa<28:
+        summa-=play
         count+=1
         # break
-    print('Ход №',(count),'Осталось конфет', (summa))
-print ('победил игрок №')
-
-
-
+    print((count),'Ход, осталось конфет', (summa))
+    if a==2:
+        k=1
+    else:
+        k=2
+    print ('Ходит игрок №',(k))
+print('Победил игрок № ')
