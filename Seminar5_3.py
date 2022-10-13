@@ -13,10 +13,11 @@ def fine_winer(a):#ходит ноликами
         if empty_field[0][i]==play and empty_field[1][i]==play and empty_field[2][i]==play:return True
         if empty_field[0][0]==play and empty_field[1][1]==play and empty_field[2][2]==play:return True
         if empty_field[0][2]==play and empty_field[1][1]==play and empty_field[2][0]==play:return True
-        else: print ('Ничья')
+        # else: print ('Ничья')
         return False
+        print("Победа!!!")
 while not win:
-    user_input=list(map(int,input("Введите координаты  ").split()))
+    user_input=list(map(int,input("Введите координаты строка/столбец, через пробел ").split()))
     if turn and empty_field[user_input[0]-1][user_input[1]-1]=='_':
         empty_field[user_input[0]-1][user_input[1]-1]='X'
     elif not turn and empty_field[user_input[0]-1][user_input[1]-1]=='_':
